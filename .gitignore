@@ -1,2 +1,4 @@
 /src/Sooof.WebApplicationV2/obj
 /src/Sooof.WebApplicationV2/bin
+/src/Sooof.WebApplicationV2/node_modules
+/src/Sooof.WebApplicationV2/aot
