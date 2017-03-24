@@ -3,13 +3,13 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:5000/",
+      "applicationUrl": "http://localhost:14600/",
       "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
-      "commandName": "IISExpress",
+      "commandName": "Executable",
       "launchBrowser": true,
       "launchUrl": "index.html",
       "environmentVariables": {
@@ -19,7 +19,7 @@
     "Sooof.WebApplicationV2": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000/",
+      "launchUrl": "http://localhost:14600/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

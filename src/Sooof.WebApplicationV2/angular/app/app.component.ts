@@ -1,12 +1,6 @@
-﻿import { Component } from '@angular/core';
-
-// AoT compilation doesn't support 'require'.
-import './app.component.scss';
-import '../style/app.scss';
-
+﻿import { Component } from "@angular/core";
 @Component({
-    selector: 'my-app',
-    templateUrl: 'app.component.html'
+    selector: "Sooof",
+    template: `<h1>Sooof</h1><div>Work in progress...</div>`
 })
-
 export class AppComponent { }

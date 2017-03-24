@@ -14,7 +14,6 @@
     "start": "tsc && npm run startWebpackDevServer",
     "startWebpackDevServer": "webpack-dev-server --inline --progress --port 8080",
     "build": "SET NODE_ENV=development && webpack -d --color && dotnet run",
-    "buildProduction": "npm run ngc && SET NODE_ENV=production && webpack -d --color",
     "lint": "tslint ./angular/**/*.ts -t verbose",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
@@ -34,6 +33,7 @@
     "reflect-metadata": "0.1.10",
     "rxjs": "5.2.0",
     "zone.js": "0.7.2",
+    "systemjs": "^0.19.37",
     "@angular/compiler-cli": "~2.4.10",
     "@angular/platform-server": "~2.4.10",
     "bootstrap": "^3.3.7",
