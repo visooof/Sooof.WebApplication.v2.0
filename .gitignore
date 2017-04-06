@@ -2,3 +2,6 @@
 /src/Sooof.WebApplicationV2/bin
 /src/Sooof.WebApplicationV2/node_modules
 /src/Sooof.WebApplicationV2/aot
+/src/Sooof.WebApi/obj
+/src/Sooof.WebApi/bin
+/src/.vs
