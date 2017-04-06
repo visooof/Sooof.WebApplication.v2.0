@@ -7,11 +7,11 @@ import { Item } from "./item";
 @Injectable()
 export class ItemService {
   constructor(private http: Http) { }
-  private baseUrl = "api/items/"; // web api URL
+  private baseUrl = "http://localhost:1128/Items/"; // web api URL
   // calls the [GET] /api/items/GetLatest/{n} Web API method to retrieve the latest items.
   getLatest(num?: number) {
-    var url = this.baseUrl + "GetLatest/";
-    console.log(url);
+    //var url = this.baseUrl + "GetLatest";
+    var url = this.baseUrl + "GetLatest";
     if (num != null) { url += num; }
     return this.http.get(url).map(response => response.json()).catch(this.handleError);
   }

@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Sooof.WebApi.ViewModels;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Cors;
 
 namespace Sooof.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+
+    [Route("[controller]")]
+    [EnableCors("CorsPolicy")]
     public class ItemsController : Controller
     {
         [HttpGet]
