@@ -59,6 +59,12 @@ namespace Sooof.WebApi.Controllers
             return new JsonResult(items, DefaultJsonSettings);
         }
 
+        [HttpGet("GetRandom")]
+        public IActionResult GetRandom()
+        {
+            return GetRandom(DefaultNumberOfItems);
+        }
+
         [HttpGet("GetRandom/{n}")]
         public IActionResult GetRandom(int n)
         {

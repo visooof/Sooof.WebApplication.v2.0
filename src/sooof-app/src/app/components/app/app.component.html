@@ -1,6 +1,8 @@
 <h1>
   {{title}}
-  <item-list class="latest"></item-list>
-  <item-list class="most-viewed"></item-list>
-  <item-list class="random"></item-list>
+  <div class="menu">
+    <a class="home" [routerLink]="['']">Home</a> | <a class="about" [routerLink]="['about']">About</a> | <a class="login"
+      [routerLink]="['login']">Login</a>
+  </div>
+  <router-outlet></router-outlet>
 </h1>
