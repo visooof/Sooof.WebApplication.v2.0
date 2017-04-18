@@ -1,8 +1,36 @@
-<h1>
-  {{title}}
-  <div class="menu">
-    <a class="home" [routerLink]="['']">Home</a> | <a class="about" [routerLink]="['about']">About</a> | <a class="login"
-      [routerLink]="['login']">Login</a>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <label class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" ariacontrols="navbar">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</label>
+      <a class="navbar-brand" href="#">
+        <img alt="logo" src="../../Favicon.png" />
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li><a class="home" [routerLink]="['']">Home</a></li>
+        <li><a class="about" [routerLink]="['about']">About</a></li>
+        <li *ngIf="!authService.isLoggedIn()" [class.active]="isActive(['login'])">
+          <a class="login" [routerLink]="['login']">Login</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn()">
+          <a class="logout" href="javascript:void(0)" (click)="logout()">Logout</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn()" [class.active]="isActive(['deal/edit', '00000000-0000-0000-0000-000000000000'])">
+          <a class="add" [routerLink]="['deal/edit', '00000000-0000-0000-0000-000000000000']">Add New</a>
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
+<h1 class="header">{{title}}</h1>
+<br>
+<br>
+<div class="main-container">
   <router-outlet></router-outlet>
-</h1>
+</div>

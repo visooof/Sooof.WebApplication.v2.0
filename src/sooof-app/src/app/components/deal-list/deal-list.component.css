@@ -1,6 +1,6 @@
-ul.items li {
+ul.deals li {
 cursor: pointer;
 }
-ul.items li.selected {
+ul.deals li.selected {
 background-color: #cccccc;
 }

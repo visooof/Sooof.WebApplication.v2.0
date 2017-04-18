@@ -1,0 +1,32 @@
+<div *ngIf="deal" class="deal-container">
+
+  <div class="deal-tab-menu">
+    <span class="selected">Edit</span>
+    <span *ngIf="deal.Id != '00000000-0000-0000-0000-000000000000'" (click)="onDealDetailView(deal)">View</span>
+  </div>
+
+  <div class="deal-details">
+    <div class="mode">Edit Mode</div>
+    <h2>{{deal.Name}}</h2>
+    <ul>
+      <li>
+        <label>Title:</label>
+        <input [(ngModel)]="deal.Name" placeholder="Insert the title..." />
+      </li>
+      <li>
+        <label>Description:</label>
+        <textarea [(ngModel)]="deal.Description" placeholder="Insert a suitable description..."></textarea>
+      </li>
+    </ul>
+
+    <div *ngIf="deal.Id == '00000000-0000-0000-0000-000000000000'" class="commands insert">
+      <input type="button" value="Save" (click)="onInsert(deal)" />
+      <input type="button" value="Cancel" (click)="onBack()" />
+    </div>
+    <div *ngIf="deal.Id != 0" class="commands update">
+      <input type="button" value="Update" (click)="onUpdate(deal)" />
+      <input type="button" value="Delete" (click)="onDelete(deal)" />
+      <input type="button" value="Cancel" (click)="onDealDetailView(deal)" />
+    </div>
+  </div>
+</div>

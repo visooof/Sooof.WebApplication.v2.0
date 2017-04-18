@@ -3,7 +3,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
 import { LoginComponent } from "./components/login/login.component";
-import { ItemDetailComponent } from "./components/item-detail/item-detail.component";
+import { DealDetailEditComponent } from "./components/deal-detail-edit/deal-detail-edit.component";
+import { DealDetailViewComponent } from "./components/deal-detail-view/deal-detail-view.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 const appRoutes: Routes = [
   {
@@ -23,8 +24,12 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: "item/:id",
-    component: ItemDetailComponent
+    path: "deal/edit/:id",
+    component: DealDetailEditComponent
+  },
+  {
+    path: "deal/view/:id",
+    component: DealDetailViewComponent
   },
   {
     path: '**',

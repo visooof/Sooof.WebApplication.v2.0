@@ -1,0 +1,7 @@
+<h2>{{Title}}</h2>
+<ul class="deals">
+  <li *ngFor="let deal of deals" [class.selected]="deal === selectedDeal" (click)="onSelect(deal)">
+    <span>{{deal.Name}}</span>
+  </li>
+</ul>
+<deal-detail-view *ngIf="selectedDeal" [deal]="selectedDeal"></deal-detail-view>
