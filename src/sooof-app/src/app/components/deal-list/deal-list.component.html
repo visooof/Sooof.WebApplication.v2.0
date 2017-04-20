@@ -2,6 +2,135 @@
 <ul class="deals">
   <li *ngFor="let deal of deals" [class.selected]="deal === selectedDeal" (click)="onSelect(deal)">
     <span>{{deal.Name}}</span>
+
+
+
+
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="band">
+              <ul class="simple menu">
+                <li>
+                  {{deal.Name}}
+                </li>
+              </ul>
+            </h4>
+            <h5 class="band">
+              {{deal.Subtitle}}
+            </h5>
+          </div>
+          <div class="card-block">
+            <img src="" alt=""> {{deal.ShortDescription}}
+            <ul class="simple menu">
+                <li><label>sooofDiscount%:</label></li>
+                <li><span>{{deal.SooofDiscountPercentage}}</span></li>
+              </ul>
+          </div>
+          <div class="card-block">
+            <h5>ABOUT THIS DEAL</h5>
+            <table border="0">
+              <div *ngIf="deal.IsSingle">
+                <tr>
+                  <td><label>Regular Price:</label></td>
+                  <td><span>{{deal.RegularUnitPriceText}}</span></td>
+                </tr>
+                <tr>
+                  <td><label>sooofDiscount$:</label></td>
+                  <td><span>{{deal.SooofUnitPriceText}}</span></td>
+                </tr>
+                <tr>
+                  <td><label>sooofDiscount%:</label></td>
+                  <td><span>{{deal.SooofDiscountPercentage}}</span></td>
+                </tr>
+                <tr>
+                  <td><label>sooofPrice:</label></td>
+                  <td><span>{{deal.SooofDiscountAmount}}</span></td>
+                </tr>
+              </div>
+              <div *ngIf="deal.isVolume">
+                <tr>
+                  <td><label>sooofDiscount$:</label></td>
+                  <td><span>{{deal.SooofDiscountAmount}}</span></td>
+                </tr>
+                <tr>
+                  <td><label>sooofDiscount%:</label></td>
+                  <td><span>{{deal.SooofDiscountPercentage}}</span></td>
+                </tr>
+              </div>
+            </table>
+            <h5>DEAL DESCRIPTION</h5>
+            {{deal.Description}}
+            <h5>DEAL CONDITIONS</h5>
+            {{deal.Conditions}}
+            <h5>PRODUCT INFO</h5>
+            <table border="0">
+              <tr>
+                <td><label>Product Name:</label></td>
+                <td><span>{{deal.ProductName}}</span></td>
+              </tr>
+              <tr>
+                <td><label>Product Description:</label></td>
+                <td><span> {{deal.ProductDescription}} </span></td>
+              </tr>
+              <tr>
+                <td><label>Manufacturer:</label></td>
+                <td><span>{{deal.Manufacturer}} </span></td>
+              </tr>
+              <tr>
+                <td><label>Manufacturer SKU</label></td>
+                <td><span>{{deal.ManufacturerSKU}} </span></td>
+              </tr>
+              <tr>
+                <td><label>Vendor SKU</label></td>
+                <td><span>{{deal.VendorSKU}}</span></td>
+              </tr>
+            </table>
+            <h5>PRODUCT Specifications</h5>
+            {{deal.Specifications}}
+          </div>
+          <div>
+            <div class="row">
+              <div class="small-4 columns sooof-deal-stats">
+                <span>{{deal.NumberOfJoined}}</span>
+                <br />
+                <span>Joined</span>
+              </div>
+              <div class="small-4 columns sooof-deal-stats">
+                <span>{{deal.NumberOfWatching}}</span>
+                <br />
+                <span>Watching</span>
+              </div>
+              <div class="small-4 columns sooof-deal-stats">
+                <span>{{deal.DaysToGo}}</span>
+                <br />
+                <span>Days to go</span>
+              </div>
+            </div>
+            <div class="progress" role="progressbar" tabindex="0" aria-valuenow="@(Model.Percentage)" aria-valuemin="0" aria-valuetext="@(Model.Percentage)"
+              aria-valuemax="100">
+              <span class="progress-meter" style="width: @(Model.PercentageText)">
+                        <p class="progress-meter-text">{{deal.PercentageText}}</p>
+                    </span>
+            </div>
+            <div class="expanded small button-group">
+              <a class="button">JOIN</a>
+              <a class="button">WATCH</a>
+              <a class="button">SHARE</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
   </li>
 </ul>
 <deal-detail-view *ngIf="selectedDeal" [deal]="selectedDeal"></deal-detail-view>

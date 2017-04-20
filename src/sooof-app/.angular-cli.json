@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "src/less/list.less"
+        "less/list.less"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
